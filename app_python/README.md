@@ -1,3 +1,6 @@
+![workflow](https://github.com/ShohKhan-dev/core-course-labs/actions/workflows/app_python-ci.yml/badge.svg)
+
+
 # Python Web Application
 
 Simple Web application that displays Current Moscow time and date that is made using Django on DevOps course
@@ -17,7 +20,7 @@ $ cd app_python
 1. pull the Docker Image from existing repo on Docker hub:
 
    ```
-   docker push rametago/my-first-repo:latest
+   docker pull rametago/my-first-repo:latest
    ```
 
 2. Run the Docker Container:
@@ -33,3 +36,23 @@ The application will be accessible at http://localhost:8000 in your web browser.
 ```
 $ pre-commit run --all-files
 ```
+
+
+## Testing the application
+Testing application by checking response status code and checking time difference after each request.
+```
+$ python manage.py test
+```
+
+
+# CI Workflow
+it works as follows:
+- setting up python and enviroment
+- install dependencies
+- linting code
+- run some tests to check application
+- install and test project with Snyk
+- docker login
+- build and push image to dockerhub
+
+**Used Secrets for Token and login information**
